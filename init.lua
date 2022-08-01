@@ -1,3 +1,5 @@
+-- set options
+vim.o.number = true
 -- Packer 插件插件管理
 require("plugins")
 -- 插件的配置

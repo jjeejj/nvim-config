@@ -3,6 +3,8 @@ local packer = require("packer")
 packer.startup({
     function(use)
         use("wbthomason/packer.nvim")
+        -- dashboard vim 启动页配置
+        use("glepnir/dashboard-nvim")
         -- lsp config
         use("neovim/nvim-lspconfig")
         -- lsp installer
@@ -13,6 +15,12 @@ packer.startup({
         use("folke/tokyonight.nvim")
         -- folder tree
         use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
+        -- bufferline
+        -- using packer.nvim
+        use({ 'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons' })
+        -- treesitter
+        -- https://github.com/nvim-treesitter/nvim-treesitter/wiki/Installation
+        use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
     end,
     config = {
         display = {
