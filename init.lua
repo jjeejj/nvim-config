@@ -4,6 +4,8 @@ vim.o.number = true
 require("plugins")
 -- 插件的配置
 require("plugin-config.nvim-tree")
+require("plugin-config.dashboard")
+require("plugin-config.project")
 -- 快捷键映射
 require("keymappings")
 -- 主体设置

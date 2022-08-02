@@ -4,5 +4,43 @@ if not status then
 end
 
 db.custom_footer = {
+    "",
+    "",
+    "github.com:jjeejj/nvim-config                  ",
+}
 
+
+db.custom_center = {
+    {
+        icon = "  ",
+        desc = "Projects                            ",
+        action = "Telescope projects",
+    },
+    {
+        icon = "  ",
+        desc = "Recently files                      ",
+        action = "Telescope oldfiles",
+    },
+    {
+        icon = "  ",
+        desc = "Edit keymappings                    ",
+        action = "edit ~/.config/nvim/lua/keymappings.lua"
+    },
+    {
+        icon = "  ",
+        desc = "Edit Projects                       ",
+        action = "edit ~/.local/share/nvim/project_nvim/project_history",
+    },
+}
+
+db.custom_header = {
+    [[]],
+    [[██╗    ██╗███████╗███╗   ██╗         ██╗██╗   ██╗███╗   ██╗]],
+    [[██║    ██║██╔════╝████╗  ██║         ██║██║   ██║████╗  ██║]],
+    [[██║ █╗ ██║█████╗  ██╔██╗ ██║         ██║██║   ██║██╔██╗ ██║]],
+    [[██║███╗██║██╔══╝  ██║╚██╗██║    ██   ██║██║   ██║██║╚██╗██║]],
+    [[╚███╔███╔╝███████╗██║ ╚████║    ╚█████╔╝╚██████╔╝██║ ╚████║]],
+    [[ ╚══╝╚══╝ ╚══════╝╚═╝  ╚═══╝     ╚════╝  ╚═════╝ ╚═╝  ╚═══╝]],
+    [[]],
+    [[]],
 }

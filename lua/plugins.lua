@@ -21,6 +21,9 @@ packer.startup({
         -- treesitter
         -- https://github.com/nvim-treesitter/nvim-treesitter/wiki/Installation
         use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+        -- project.nvim
+        -- https://github.com/ahmedkhalf/project.nvim
+        use("ahmedkhalf/project.nvim")
     end,
     config = {
         display = {
