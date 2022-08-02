@@ -24,6 +24,13 @@ packer.startup({
         -- project.nvim
         -- https://github.com/ahmedkhalf/project.nvim
         use("ahmedkhalf/project.nvim")
+        -- telescope.nvim
+        -- https://github.com/nvim-telescope/telescope.nvim
+        use({ "nvim-telescope/telescope.nvim", requires = 'nvim-lua/plenary.nvim' })
+
+        -- telescope-env.nvim"
+        -- https://github.com/LinArcX/telescope-env.nvim
+        use("LinArcX/telescope-env.nvim")
     end,
     config = {
         display = {

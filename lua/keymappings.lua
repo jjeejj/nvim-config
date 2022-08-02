@@ -49,5 +49,12 @@ pluginKey.nvimTreeList = {
 -- terminal 终端快捷键设置
 map("t", "li", ":LspInstallInfo<CR>", opt)
 
+-- Telescope 快捷键设置
+map("n", "<C-p>", ":Telescope find_files<CR>", opt)
+map("n", "<C-f>", ":Telescope live_grep<CR>", opt)
+pluginKey.telescopeList = {
+
+}
+
 
 return pluginKey

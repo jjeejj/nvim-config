@@ -6,6 +6,7 @@ require("plugins")
 require("plugin-config.nvim-tree")
 require("plugin-config.dashboard")
 require("plugin-config.project")
+require("plugin-config.telescope")
 -- 快捷键映射
 require("keymappings")
 -- 主体设置
