@@ -22,12 +22,10 @@ map("n", "sc", "<C-w>c", opt)
 -- 关闭其他窗口
 map("n", "so", "<C-w>o", opt)
 -- 切换窗口
-map("n", "<M-j>", "<C-w>j", opt)
-map("n", "<M-k>", "<C-w>k", opt)
-map("n", "<M-h>", "<C-w>h", opt)
-map("n", "<M-l>", "<C-w>l", opt)
-
-
+map("n", "<C-j>", "<C-w>j", opt)
+map("n", "<C-k>", "<C-w>k", opt)
+map("n", "<C-h>", "<C-w>h", opt)
+map("n", "<C-l>", "<C-w>l", opt)
 
 -- 退出
 map("n", "wq", ":wq<CR>", opt)
