@@ -13,12 +13,7 @@ vim.wo.cursorline = true
 
 
 -- 显示 tabline
-vim.o.showtabline = 4
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
-vim.o.softtabstop = 4
-vim.o.expandtab = true
- 
+ vim.o.showtabline = 2
 
  -- 关闭底部默认状态显示
 vim.o.showmode = false
@@ -27,4 +22,17 @@ vim.o.showmode = false
 vim.o.signcolumn = "yes"
 
 -- 右侧行长度参考线
-vim.wo.colorcolumn = "120"
+vim.wo.colorcolumn = "80"
+
+-- tab 4 个空格
+vim.o.tabstop = 4
+vim.bo.tabstop = 4
+vim.o.softtabstop = 4
+vim.bo.softtabstop = 4
+vim.o.shiftround = true
+
+-- 空格代替 tab
+vim.o.expandtab = true
+vim.bo.expandtab = true
+
+-- 缩进

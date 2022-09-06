@@ -35,8 +35,8 @@ map("n", "Q", ":qa!<CR>", opt)
 
 -- insert 模式下的快捷键
 -- 跳转到行首和行尾
-map("i", "<C-h>", "<ESC>I", opt)
-map("i", "<C-l>", "<ESC>A", opt)
+map("i", "<C-a>", "<ESC>I", opt)
+map("i", "<C-e>", "<ESC>A", opt)
 
 -- tree 文件树左侧快捷键设置
 map("n", "<M-t>", ":NvimTreeToggle<CR>", opt)
