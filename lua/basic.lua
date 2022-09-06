@@ -22,7 +22,7 @@ vim.o.showmode = false
 vim.o.signcolumn = "yes"
 
 -- 右侧行长度参考线
-vim.wo.colorcolumn = "80"
+vim.wo.colorcolumn = "120"
 
 -- tab 4 个空格
 vim.o.tabstop = 4
