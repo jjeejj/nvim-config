@@ -13,3 +13,8 @@ require("plugin-config.nvim-treesitter")
 require("keymappings")
 -- 主体设置
 require("colorscheme")
+
+-- LSP
+require("lsp.setup")
+-- cmp
+require("lsp.cmp")

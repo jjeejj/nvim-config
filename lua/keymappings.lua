@@ -60,6 +60,10 @@ pluginKey.telescopeList = {
 
 }
 
+-- lsp 快捷键
+pluginKey.lspList = function(bufnr)    
+end
+
 return pluginKey
 
 

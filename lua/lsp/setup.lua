@@ -2,7 +2,8 @@ local lsp_installer = require("nvim-lsp-installer")
 
 -- 需要安装的lsp server 列表
 local servers = {
-    sumneko_lua = require("lsp.config.lua")
+    -- sumneko_lua = require("lsp.config.lua"), 
+    gopls = require("lsp.config.go"),
 }
 
 -- 自动安装 lsp server

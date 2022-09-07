@@ -8,6 +8,7 @@ telescope.setup({
     defaults = {
         initial_mode = "insert",
         layout_strategy = "horizontal",
+        mappings = require("keymappings").telescopeList,
     },
     pickers = {
         find_files = {
