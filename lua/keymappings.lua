@@ -64,6 +64,10 @@ pluginKey.telescopeList = {
 pluginKey.lspList = function(bufnr)    
 end
 
+-- bufferline
+-- 左右切换 tab
+map("n", "<M-h>","", opt)
+
 return pluginKey
 
 

@@ -45,6 +45,11 @@ packer.startup({
         use("hrsh7th/cmp-cmdline")
         use("hrsh7th/cmp-vsnip")
         use("hrsh7th/vim-vsnip")
+
+        -- lualine.nvim
+        -- https://github.com/nvim-lualine/lualine.nvim
+        use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true, "moll/vim-bbye" }})
+        use("arkav/lualine-lsp-progress")
     end,
     config = {
         display = {
