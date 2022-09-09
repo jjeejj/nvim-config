@@ -1,5 +1,5 @@
 return {
-    onsetup = function(server)
+    on_setup = function(server)
         server:setup({
             settings = {
                 Lua = {
