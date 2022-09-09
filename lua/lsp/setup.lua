@@ -4,6 +4,7 @@ local lsp_installer = require("nvim-lsp-installer")
 local servers = {
     sumneko_lua = require("lsp.config.lua"),
     gopls = require("lsp.config.go"),
+    jsonls = require("lsp.config.json"),
 }
 
 -- 自动安装 lsp server
