@@ -8,8 +8,8 @@ vim.g.maplocalleader = " "
 
 -- 定义 set key map 的快捷函数
 local map = vim.api.nvim_set_keymap
+local bufmap = vim.api.nvim_buf_set_keymap
 local opt = { noremap = true, silent = true }
-
 -- 窗口管理快捷键
 -- 取消原来 s 快捷键的功能
 map("n", "s", "", opt)
@@ -60,9 +60,22 @@ pluginKey.telescopeList = {
 
 }
 
+
+
 -- lsp 快捷键
-pluginKey.lspList = function(bufnr)    
+pluginKey.lspList = function(bufnr)
+    bufmap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opt)
+    bufmap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.cade_action()<CR>", opt)
+    -- go to
+    bufmap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
+    bufmap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
+    bufmap(bufnr, "n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
+    bufmap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementtation()<CR>", opt)
+    bufmap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opt)
+    -- diagnostic
+    bufmap(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
 end
+
 
 -- bufferline
 -- 左右切换 tab
