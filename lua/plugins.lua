@@ -11,8 +11,15 @@ packer.startup({
         use("williamboman/nvim-lsp-installer")
         -- use("williamboman/mason-lspconfig.nvim")
         -- use("williamboman/mason.nvim")
-        -- colorscheme
+        -- colorscheme tokyonight
         use("folke/tokyonight.nvim")
+        use("RRethy/nvim-base16")
+        -- nord
+        use("shaunsingh/nord.nvim")
+        -- onedark
+        use("ful1e5/onedark.nvim")
+        -- nightfox
+        use("EdenEast/nightfox.nvim")
         -- folder tree
         use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
         -- bufferline
