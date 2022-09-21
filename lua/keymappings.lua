@@ -27,6 +27,16 @@ map("n", "<C-k>", "<C-w>k", opt)
 map("n", "<C-h>", "<C-w>h", opt)
 map("n", "<C-l>", "<C-w>l", opt)
 
+-- 修改窗口大小
+map("n", "<M-Left>", ":vertical resize -2<CR>", opt)
+map("n", "<M-Right>", ":vertical resize +2<CR>", opt)
+map("n", "<M-Up>", ":resize +2<CR>", opt)
+map("n", "<M-Down>", ":resize -2<CR>", opt)
+map("n", "s,", ":vertical resize -20<CR>", opt)
+map("n", "s.", ":vertical resize +20<CR>", opt)
+map("n", "sk", ":resize +20<CR>", opt)
+map("n", "sj", ":resize -20<CR>", opt)
+
 -- 退出
 map("n", "wq", ":wq<CR>", opt)
 map("n", "q", ":q<CR>", opt)
@@ -46,6 +56,8 @@ pluginKey.nvimTreeList = {
 
 -- terminal 终端快捷键设置
 map("t", "li", ":LspInstallInfo<CR>", opt)
+map("n", "<leader>t", ":sp | terminal<CR>", opt)
+map("n", "<leader>vt", ":vsp | terminal<CR>", opt)
 
 -- toggleterm 终端快捷键设置
 map("t", "<esc>", [[<C-\><C-n>]], opt)
