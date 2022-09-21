@@ -15,6 +15,7 @@ nvim_tree.setup({
     sort_by = "case_sensitive",
     update_cwd = true,
     respect_buf_cwd = true,
+    open_on_tab = true,
     update_focused_file = {
         enable = true,
         update_cwd = true,
@@ -35,6 +36,11 @@ nvim_tree.setup({
     },
     system_open = {
         cmd = "open"
+    },
+    action = {
+        open_file = {
+            quit_on_open = false,
+        },
     }
 })
 -- 自动关闭

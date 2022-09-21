@@ -10,6 +10,7 @@ require("plugin-config.telescope")
 require("plugin-config.toggleterm")
 require("plugin-config.nvim-treesitter")
 require("plugin-config.lualine")
+require("plugin-config.bufferline")
 -- 快捷键映射
 require("keymappings")
 -- 主体设置

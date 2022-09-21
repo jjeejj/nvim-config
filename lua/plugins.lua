@@ -24,7 +24,7 @@ packer.startup({
         use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
         -- bufferline
         -- using packer.nvim
-        use({ 'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons' })
+        use({ 'akinsho/bufferline.nvim', tag = "v2.*", requires = { 'kyazdani42/nvim-web-devicons', "moll/vim-bbye" }})
         -- treesitter
         -- https://github.com/nvim-treesitter/nvim-treesitter/wiki/Installation
         use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
