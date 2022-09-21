@@ -5,8 +5,13 @@ if not status then
     return
 end
 
+-- 列表操作快捷键
+local list_keys = require('keymappings').nvimTreeList
 -- 设置配置项
 nvim_tree.setup({
+    git = {
+        enable = false,
+    },
     sort_by = "case_sensitive",
     update_cwd = true,
     respect_buf_cwd = true,
@@ -15,6 +20,9 @@ nvim_tree.setup({
         update_cwd = true,
         ignore_list = {}
     },
+    filters = {
+        dotfiles = false,
+    },
     view = {
         width = 30,
         side = "left",
@@ -22,12 +30,14 @@ nvim_tree.setup({
         signcolumn = "yes",
         mappings = {
             custom_only = false,
-            list = {
-
-            }
+            list = list_keys,
         }
     },
     system_open = {
         cmd = "open"
     }
 })
+-- 自动关闭
+vim.cmd([[
+  autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
+]])
