@@ -113,6 +113,10 @@ map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
 map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
 map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
 
+-- treesitter
+map("n", "zz", ":foldclose<CR>", opt)
+map("n", "Z", ":foldopen<CR>", opt)
+
 return pluginKey
 
 
