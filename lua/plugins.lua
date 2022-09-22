@@ -38,7 +38,9 @@ packer.startup({
         -- telescope-env.nvim"
         -- https://github.com/LinArcX/telescope-env.nvim
         use("LinArcX/telescope-env.nvim")
-
+        -- telescope-project.nvim
+        -- https://github.com/nvim-telescope/telescope-project.nvim
+        use("nvim-telescope/telescope-project.nvim")
         -- toggleterm.vim
         -- https://github.com/akinsho/toggleterm.nvim
         use({ 'akinsho/toggleterm.nvim', tag = 'v2.*' })

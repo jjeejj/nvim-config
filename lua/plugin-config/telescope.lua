@@ -14,12 +14,12 @@ telescope.setup({
         find_files = {
             theme = "ivy",
         }
+    },
+    extensions = {
     }
 })
 
-
-pcall(telescope.load_extension, "ui-select")
-
-
 -- telescope extensions
+pcall(telescope.load_extension, "ui-select")
 pcall(telescope.load_extension, "env")
+pcall(telescope.load_extension, "project")
