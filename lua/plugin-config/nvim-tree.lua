@@ -18,8 +18,9 @@ nvim_tree.setup({
     open_on_tab = true,
     update_focused_file = {
         enable = true,
-        update_cwd = true,
-        ignore_list = {}
+        update_cwd = false,
+        ignore_list = {},
+        update_root = true,
     },
     filters = {
         dotfiles = false,
