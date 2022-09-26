@@ -117,6 +117,12 @@ map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
 map("n", "zz", ":foldclose<CR>", opt)
 map("n", "Z", ":foldopen<CR>", opt)
 
+-- cmp 代码补全
+pluginKey.cmp = function(cmp)
+    return { 
+    }
+end
+
 return pluginKey
 
 

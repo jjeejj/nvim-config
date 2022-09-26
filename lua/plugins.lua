@@ -47,14 +47,18 @@ packer.startup({
 
         -- nvim-cmp
         -- https://github.com/hrsh7th/nvim-cmp
+        -- 补全引擎
         use("hrsh7th/nvim-cmp")
-        use("hrsh7th/cmp-nvim-lsp")
-        use("hrsh7th/cmp-buffer")
-        use("hrsh7th/cmp-path")
-        use("hrsh7th/cmp-cmdline")
-        use("hrsh7th/cmp-vsnip")
+        -- snippet 引擎
         use("hrsh7th/vim-vsnip")
-
+        -- 补全源
+        use("hrsh7th/cmp-nvim-lsp") -- name = nvim_lsp
+        use("hrsh7th/cmp-buffer") -- name = buffer
+        use("hrsh7th/cmp-path") -- name = path
+        use("hrsh7th/cmp-cmdline") -- name = cmdline
+        use("hrsh7th/cmp-vsnip") -- 
+        -- 常见编程语言代码段
+        use("rafamadriz/friendly-snippets")
         -- lualine.nvim
         -- https://github.com/nvim-lualine/lualine.nvim
         use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true, "moll/vim-bbye" }})
