@@ -65,6 +65,8 @@ packer.startup({
         use("arkav/lualine-lsp-progress")
         -- json 增强
         use("b0o/schemastore.nvim")
+        -- indent-blankline
+        use("lukas-reineke/indent-blankline.nvim")
     end,
     config = {
         display = {

@@ -43,10 +43,12 @@ map("n", "q", ":q<CR>", opt)
 map("n", "qq", ":q!<CR>", opt)
 map("n", "Q", ":qa!<CR>", opt)
 
--- insert 模式下的快捷键
+-- insert mormal 模式下的快捷键
 -- 跳转到行首和行尾
 map("i", "<C-a>", "<ESC>I", opt)
 map("i", "<C-e>", "<ESC>A", opt)
+map("n", "<C-a>", "<ESC>I", opt)
+map("n", "<C-e>", "<ESC>A", opt)
 
 -- tree 文件树左侧快捷键设置
 map("n", "<M-t>", ":NvimTreeToggle<CR>", opt)
@@ -119,7 +121,28 @@ map("n", "Z", ":foldopen<CR>", opt)
 
 -- cmp 代码补全
 pluginKey.cmp = function(cmp)
-    return { 
+    return {
+        ["<Esc>"] = cmp.mapping({
+            i = cmp.mapping.abort(),
+            c = cmp.mapping.close(),
+        }),
+        -- ["<Down>"] = cmp.mapping.select_prev_item(),
+        -- ["<Up>"] = cmp.mapping.select_next_item(),
+        -- 上一个 在一个
+        ["<C-p>"] = {
+            i = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+        },
+        ["<C-n>"] = {
+            i = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+        },
+        -- 确定
+        ["<CR>"] = cmp.mapping.confirm({
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true,
+        }),
+        -- 如果窗口内容太多，可以滚动
+        ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), {"i", "c"}),
+        ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), {"i", "c"}),
     }
 end
 
