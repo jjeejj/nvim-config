@@ -1,6 +1,7 @@
 local status, null_ls = pcall(require, "null-ls")
 if not status then
     vim.notify("not found null-ls")
+    return
 end
 
 local formatting = null_ls.builtins.formatting

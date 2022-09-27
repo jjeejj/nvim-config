@@ -1,4 +1,8 @@
-local lspkind = require("lspkind")
+local status , lspkind = pcall(require,"lspkind")
+if not status then
+    vim.notify("not found lskind")
+    return
+end
 
 vim.diagnostic.config({
     virtual_text = true,
