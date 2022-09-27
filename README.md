@@ -5,6 +5,7 @@ nvim 的配置
 > 该配置适用于 Mac 环境，Window 环境需要适当的修改
 
 ## 目录结构
+```
 .
 ├── LICENSE 
 ├── README.md               -- 仓库使用说明
@@ -39,6 +40,7 @@ nvim 的配置
 │   └── plugins.lua
 └── plugin
     └── packer_compiled.lua
+```
 
 ## 详细配置说明
 
