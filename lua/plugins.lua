@@ -73,6 +73,9 @@ packer.startup({
         -- lspsaga
         -- https://github.com/glepnir/lspsaga.nvim
         use({ "glepnir/lspsaga.nvim" , branch = "main" })
+        -- null-ls.nvim
+        -- https://github.com/jose-elias-alvarez/null-ls.nvim
+        use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim" }})
     end,
     config = {
         display = {
