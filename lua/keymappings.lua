@@ -47,26 +47,27 @@ map("n", "Q", ":qa!<CR>", opt)
 -- 跳转到行首和行尾
 map("i", "<C-a>", "<ESC>I", opt)
 map("i", "<C-e>", "<ESC>A", opt)
+map("i", "<C-s>", "<Cmd>:w<CR>", opt)
 map("n", "<C-a>", "<ESC>I", opt)
 map("n", "<C-e>", "<ESC>A", opt)
 
 -- tree 文件树左侧快捷键设置
 map("n", "<M-t>", ":NvimTreeToggle<CR>", opt)
 pluginKey.nvimTreeList = {
-    { key = ".", action = "toggle_dotfiles" },
-    { key = { "<CR>", "o", "<2-LeftMouse>" }, action = "edit" },
-    { key = "sh", action = "split" },
-    { key = "sv", action = "vsplit" },
-    { key = "st", action = "tabnew" },
-    -- 文件操作
-    { key = "<F5>", action = "refresh" },
-    { key = "a", action = "create" },
-    { key = "d", action = "remove" },
-    { key = "r", action = "rename" },
-    { key = "x", action = "cut" },
-    { key = "c", action = "copy" },
-    { key = "p", action = "paste" },
-    { key = "<leader>", action = "system_open" },
+	{ key = ".", action = "toggle_dotfiles" },
+	{ key = { "<CR>", "o", "<2-LeftMouse>" }, action = "edit" },
+	{ key = "sh", action = "split" },
+	{ key = "sv", action = "vsplit" },
+	{ key = "st", action = "tabnew" },
+	-- 文件操作
+	{ key = "<F5>", action = "refresh" },
+	{ key = "a", action = "create" },
+	{ key = "d", action = "remove" },
+	{ key = "r", action = "rename" },
+	{ key = "x", action = "cut" },
+	{ key = "c", action = "copy" },
+	{ key = "p", action = "paste" },
+	{ key = "<leader>", action = "system_open" },
 }
 
 -- terminal 终端快捷键设置
@@ -84,42 +85,39 @@ map("t", "<C-k>", [[<Cmd>wincmd k<CR>]], opt)
 map("n", "<C-p>", ":Telescope find_files<CR>", opt)
 map("n", "<C-f>", ":Telescope live_grep<CR>", opt)
 pluginKey.telescopeList = {
-    i = {
-        ["<Esc>"] = "close",
-    },
+	i = {
+		["<Esc>"] = "close",
+	},
 }
-
-
 
 -- lsp 快捷键
 pluginKey.lspList = function(bufnr)
-    -- bufmap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opt)
-    bufmap(bufnr, "n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opt)
-    -- bbufmap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.cade_action()<CR>", opt)
-    bufmap(bufnr, "n", "<leader>ca", "<cmd>Lspsaga cade_action<CR>", opt)
-    -- go to
-    bufmap(bufnr, "n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opt)
-    bufmap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
-    -- bufmap(bufnr, "n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
-    bufmap(bufnr, "n", "gh", "<cmd>Lspsaga hover_doc<CR>", opt)
-    bufmap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementtation()<CR>", opt)
-    -- bufmap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opt)
-    bufmap(bufnr, "n", "gr", "<cmd>Lspsaga lsp_finder<CR>", opt)
-    -- diagnostic
-    -- bufmap(bufnr, "n", "go", "<cmd>lua vim.diagnostic.open_float()<CR>", opt)
-    bufmap(bufnr, "n", "go", "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
-    -- bufmap(bufnr, "n", "gn", "<cmd>lua vim.diagnostic.goto_next()<CR>", opt)
-    bufmap(bufnr, "n", "gn", "<cmd>Lspsaga diagnostic_jump_next<CR>", opt)
-    -- bufmap(bufnr, "n", "gp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opt)
-    bufmap(bufnr, "n", "gp", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opt)
-    bufmap(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
+	-- bufmap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opt)
+	bufmap(bufnr, "n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opt)
+	-- bbufmap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.cade_action()<CR>", opt)
+	bufmap(bufnr, "n", "<leader>ca", "<cmd>Lspsaga cade_action<CR>", opt)
+	-- go to
+	bufmap(bufnr, "n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opt)
+	bufmap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
+	-- bufmap(bufnr, "n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
+	bufmap(bufnr, "n", "gh", "<cmd>Lspsaga hover_doc<CR>", opt)
+	bufmap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementtation()<CR>", opt)
+	-- bufmap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opt)
+	bufmap(bufnr, "n", "gr", "<cmd>Lspsaga lsp_finder<CR>", opt)
+	-- diagnostic
+	-- bufmap(bufnr, "n", "go", "<cmd>lua vim.diagnostic.open_float()<CR>", opt)
+	bufmap(bufnr, "n", "go", "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
+	-- bufmap(bufnr, "n", "gn", "<cmd>lua vim.diagnostic.goto_next()<CR>", opt)
+	bufmap(bufnr, "n", "gn", "<cmd>Lspsaga diagnostic_jump_next<CR>", opt)
+	-- bufmap(bufnr, "n", "gp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opt)
+	bufmap(bufnr, "n", "gp", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opt)
+	bufmap(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
 end
-
 
 -- bufferline
 -- 左右切换 tab
-map("n", "<M-h>",":BufferLineCyclePrev<CR>", opt)
-map("n", "<M-l>",":BufferLineCycleNext<CR>", opt)
+map("n", "<M-h>", ":BufferLineCyclePrev<CR>", opt)
+map("n", "<M-l>", ":BufferLineCycleNext<CR>", opt)
 map("n", "<C-w>", ":Bdelete!<CR>", opt)
 map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
 map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
@@ -131,31 +129,29 @@ map("n", "Z", ":foldopen<CR>", opt)
 
 -- cmp 代码补全
 pluginKey.cmp = function(cmp)
-    return {
-        ["<Esc>"] = cmp.mapping({
-            i = cmp.mapping.abort(),
-            c = cmp.mapping.close(),
-        }),
-        -- ["<Down>"] = cmp.mapping.select_prev_item(),
-        -- ["<Up>"] = cmp.mapping.select_next_item(),
-        -- 上一个 在一个
-        ["<C-p>"] = {
-            i = cmp.mapping.select_prev_item(),
-        },
-        ["<C-n>"] = {
-            i = cmp.mapping.select_next_item(),
-        },
-        -- 确定
-        ["<CR>"] = cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
-        }),
-        -- 如果窗口内容太多，可以滚动
-        ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), {"i", "c"}),
-        ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), {"i", "c"}),
-    }
+	return {
+		["<Esc>"] = cmp.mapping({
+			i = cmp.mapping.abort(),
+			c = cmp.mapping.close(),
+		}),
+		-- ["<Down>"] = cmp.mapping.select_prev_item(),
+		-- ["<Up>"] = cmp.mapping.select_next_item(),
+		-- 上一个 在一个
+		["<C-p>"] = {
+			i = cmp.mapping.select_prev_item(),
+		},
+		["<C-n>"] = {
+			i = cmp.mapping.select_next_item(),
+		},
+		-- 确定
+		["<CR>"] = cmp.mapping.confirm({
+			behavior = cmp.ConfirmBehavior.Replace,
+			select = true,
+		}),
+		-- 如果窗口内容太多，可以滚动
+		["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+		["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
+	}
 end
 
 return pluginKey
-
-
