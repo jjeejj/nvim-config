@@ -24,6 +24,7 @@ cmp.setup({
         end,
     },
     maaping = require("keymappings").cmp(cmp),
+    formatting = require("lsp.ui").cmpFormatting,
 })
 
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).

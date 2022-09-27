@@ -93,15 +93,25 @@ pluginKey.telescopeList = {
 
 -- lsp 快捷键
 pluginKey.lspList = function(bufnr)
-    bufmap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opt)
-    bufmap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.cade_action()<CR>", opt)
+    -- bufmap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opt)
+    bufmap(bufnr, "n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opt)
+    -- bbufmap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.cade_action()<CR>", opt)
+    bufmap(bufnr, "n", "<leader>ca", "<cmd>Lspsaga cade_action<CR>", opt)
     -- go to
     bufmap(bufnr, "n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opt)
     bufmap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
-    bufmap(bufnr, "n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
+    -- bufmap(bufnr, "n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
+    bufmap(bufnr, "n", "gh", "<cmd>Lspsaga hover_doc<CR>", opt)
     bufmap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementtation()<CR>", opt)
-    bufmap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opt)
+    -- bufmap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opt)
+    bufmap(bufnr, "n", "gr", "<cmd>Lspsaga lsp_finder<CR>", opt)
     -- diagnostic
+    -- bufmap(bufnr, "n", "go", "<cmd>lua vim.diagnostic.open_float()<CR>", opt)
+    bufmap(bufnr, "n", "go", "<cmd>Lspsaga show_line_diagnostics<CR>", opt)
+    -- bufmap(bufnr, "n", "gn", "<cmd>lua vim.diagnostic.goto_next()<CR>", opt)
+    bufmap(bufnr, "n", "gn", "<cmd>Lspsaga diagnostic_jump_next<CR>", opt)
+    -- bufmap(bufnr, "n", "gp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opt)
+    bufmap(bufnr, "n", "gp", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opt)
     bufmap(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
 end
 
@@ -130,10 +140,10 @@ pluginKey.cmp = function(cmp)
         -- ["<Up>"] = cmp.mapping.select_next_item(),
         -- 上一个 在一个
         ["<C-p>"] = {
-            i = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+            i = cmp.mapping.select_prev_item(),
         },
         ["<C-n>"] = {
-            i = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+            i = cmp.mapping.select_next_item(),
         },
         -- 确定
         ["<CR>"] = cmp.mapping.confirm({

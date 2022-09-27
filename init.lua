@@ -16,9 +16,11 @@ require("plugin-config.toggleterm")
 require("plugin-config.nvim-treesitter")
 require("plugin-config.lualine")
 require("plugin-config.bufferline")
+require("plugin-config.indent-blankline")
 -- 主体设置
 
 -- LSP
 require("lsp.setup")
 -- cmp
 require("lsp.cmp")
+require("lsp.ui")

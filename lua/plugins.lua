@@ -65,8 +65,14 @@ packer.startup({
         use("arkav/lualine-lsp-progress")
         -- json 增强
         use("b0o/schemastore.nvim")
-        -- indent-blankline
+        -- ui 图标
+        use("onsails/lspkind-nvim")
+        -- indent-blankline.nvim
+        -- https://github.com/lukas-reineke/indent-blankline.nvim
         use("lukas-reineke/indent-blankline.nvim")
+        -- lspsaga
+        -- https://github.com/glepnir/lspsaga.nvim
+        use({ "glepnir/lspsaga.nvim" , branch = "main" })
     end,
     config = {
         display = {
