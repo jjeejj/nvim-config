@@ -137,17 +137,14 @@ pluginKey.cmp = function(cmp)
 		-- ["<Down>"] = cmp.mapping.select_prev_item(),
 		-- ["<Up>"] = cmp.mapping.select_next_item(),
 		-- 上一个 在一个
-		["<C-p>"] = {
-			i = cmp.mapping.select_prev_item(),
-		},
-		["<C-n>"] = {
-			i = cmp.mapping.select_next_item(),
-		},
+		["<C-p>"] = cmp.mapping.select_prev_item(),
+		["<C-n>"] = cmp.mapping.select_next_item(),
 		-- 确定
 		["<CR>"] = cmp.mapping.confirm({
 			behavior = cmp.ConfirmBehavior.Replace,
 			select = true,
 		}),
+		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
 		-- 如果窗口内容太多，可以滚动
 		["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
 		["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),

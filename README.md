@@ -52,3 +52,5 @@ nvim 的配置
 2. Markdonw 文件如何进行预览？
 
 3. Command 按键如何使用？
+
+4. Go 程序如何自动导出使用的 package ?
