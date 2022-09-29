@@ -58,12 +58,12 @@ packer.startup({
 		use("hrsh7th/cmp-cmdline") -- name = cmdline
 		use("hrsh7th/cmp-vsnip") -- 代码片段提示
 		use("f3fora/cmp-spell") -- 单词拼写
-		--	use({
-		--		"tzachar/cmp-tabnine",
-		--		run = "./install.sh",
-		--		requires = "hrsh7th/nvim-cmp",
-		--		commit = "8c4512d148693ecb412ef9be4df9fb4619d033df",
-		--	}) -- ai 代码补全
+		use({
+			"tzachar/cmp-tabnine",
+			run = "./install.sh",
+			requires = "hrsh7th/nvim-cmp",
+			-- commit = "8c4512d148693ecb412ef9be4df9fb4619d033df",
+		}) -- ai 代码补全
 		-- 常见编程语言代码段
 		use("rafamadriz/friendly-snippets")
 		-- lualine.nvim

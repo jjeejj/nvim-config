@@ -6,6 +6,7 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 		{ name = "vsnip" },
 		{ name = "spell" },
+		{ name = "tabnine" },
 	}, {
 		{ name = "buffer" },
 		{ name = "path" },
