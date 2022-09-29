@@ -84,6 +84,7 @@ map("t", "<C-k>", [[<Cmd>wincmd k<CR>]], opt)
 -- Telescope 快捷键设置
 map("n", "<C-p>", ":Telescope find_files<CR>", opt)
 map("n", "<C-f>", ":Telescope live_grep<CR>", opt)
+map("n", "<C-j>", ":Telescope project<CR>", opt)
 pluginKey.telescopeList = {
 	i = {
 		["<Esc>"] = "close",

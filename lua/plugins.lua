@@ -9,6 +9,12 @@ packer.startup({
 		use("neovim/nvim-lspconfig")
 		-- lsp installer
 		use("williamboman/nvim-lsp-installer")
+		-- kosayoda/nvim-lightbulb
+		-- https://github.com/kosayoda/nvim-lightbulb
+		use("kosayoda/nvim-lightbulb")
+		-- ray-x/lsp_signature.nvim
+		-- https://github.com/ray-x/lsp_signature.nvim
+		use("ray-x/lsp_signature.nvim")
 		-- use("williamboman/mason-lspconfig.nvim")
 		-- use("williamboman/mason.nvim")
 		-- colorscheme tokyonight
