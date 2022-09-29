@@ -18,6 +18,7 @@ require("plugin-config.lualine")
 require("plugin-config.bufferline")
 require("plugin-config.indent-blankline")
 require("plugin-config.null-ls")
+require("plugin-config.lsp-signature")
 
 -- 主体设置
 
@@ -26,4 +27,3 @@ require("lsp.setup")
 -- cmp
 require("lsp.cmp")
 require("lsp.ui")
-
