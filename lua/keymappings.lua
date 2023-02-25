@@ -1,5 +1,3 @@
--- 快捷键绑定
-
 -- 插件需要导出的快捷键设置
 local pluginKey = {}
 -- 设置常用的快捷的前缀 key 为空格
@@ -130,8 +128,16 @@ map("n", "Z", ":foldopen<CR>", opt)
 
 -- cmp 代码补全
 pluginKey.cmp = function(cmp)
+	local feedkey = function(key, mode)
+		vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
+	end
+
+	local has_words_before = function()
+		local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+		return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+	end
 	return {
-		["<Esc>"] = cmp.mapping({
+		["<M-,>"] = cmp.mapping({
 			i = cmp.mapping.abort(),
 			c = cmp.mapping.close(),
 		}),
@@ -145,10 +151,30 @@ pluginKey.cmp = function(cmp)
 			behavior = cmp.ConfirmBehavior.Replace,
 			select = true,
 		}),
-		["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+		["<M-.>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
 		-- 如果窗口内容太多，可以滚动
 		["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
 		["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
+		-- Super Tab
+		["<Tab>"] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_next_item()
+			elseif vim.fn["vsnip#available"](1) == 1 then
+				feedkey("<Plug>(vsnip-expand-or-jump)", "")
+			elseif has_words_before() then
+				cmp.complete()
+			else
+				fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
+			end
+		end, { "i", "s" }),
+
+		["<S-Tab>"] = cmp.mapping(function()
+			if cmp.visible() then
+				cmp.select_prev_item()
+			elseif vim.fn["vsnip#jumpable"](-1) == 1 then
+				feedkey("<Plug>(vsnip-jump-prev)", "")
+			end
+		end, { "i", "s" }),
 	}
 end
 
