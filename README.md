@@ -52,7 +52,7 @@ nvim 的配置
 2. 使用  [packer](https://github.com/wbthomason/packer.nvim) 来管理的插件，先进行安装
 
 `git clone --depth 1 <https://github.com/wbthomason/packer.nvim>\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim`
 
  3. 进入 `neovim` 执行 :PackerSync 安装插件
 
