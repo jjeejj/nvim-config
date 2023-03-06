@@ -60,10 +60,22 @@ nvim 的配置
 
 1. 当使用 nvim 打开 一个文件的时候，外部对该文件进行了修改，如何实时感应到？
 
-2. Markdonw 文件如何进行预览？
+2. Markdown 文件如何进行预览？
 
 3. Command 按键如何使用？
 
 4. Go 程序如何自动导出使用的 package ?
 
 5. 自动补全的时候，如何选择下面建议的全部代码，而不只是输入的建议 (enter 没有起作用)？
+
+6. 执行 :PackerSync 更新 Plugin 的时候 报错 Your nvim does not has `nvim_create_autocmd` function. Please update to latest nvim
+
+答： neovim 版本过低 , 升级即可 [Installing-Neovim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
+
+7. 使用 TabNine 插件后，每次启动 提示 not executable
+
+答：尝试尝试后重新 下载安装
+
+8. `sumneko_lua is deprecated, use lua_ls instead This function will be removed in lspconfig version 0.2.0`
+
+答：更新 sumneko_lua 为 [lua_ls](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#lua_ls)
