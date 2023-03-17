@@ -54,7 +54,12 @@ nvim 的配置
 `git clone --depth 1 <https://github.com/wbthomason/packer.nvim>\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim`
 
- 3. 进入 `neovim` 执行 :PackerSync 安装插件
+3. 进入 `neovim` 执行 :PackerSync 安装插件
+
+4. 设置字体图标
+
+[nerdfonts](https://www.nerdfonts.com/font-downloads) 从这个网站上下载对应的字体，然后进行配置
+
 
 ## 问题汇总
 
