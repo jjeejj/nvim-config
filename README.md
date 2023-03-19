@@ -60,6 +60,9 @@ nvim 的配置
 
 [nerdfonts](https://www.nerdfonts.com/font-downloads) 从这个网站上下载对应的字体，然后进行配置
 
+5. 基础配置 lua/basic.lua
+
+
 
 ## 问题汇总
 
@@ -84,3 +87,4 @@ nvim 的配置
 8. `sumneko_lua is deprecated, use lua_ls instead This function will be removed in lspconfig version 0.2.0`
 
 答：更新 sumneko_lua 为 [lua_ls](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#lua_ls)
+
