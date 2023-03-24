@@ -28,13 +28,13 @@ map("n", "<C-l>", "<C-w>l", opt)
 -- 修改窗口大小
 map("n", "<M-Left>", ":vertical resize -2<CR>", opt)
 map("n", "<M-Right>", ":vertical resize +2<CR>", opt)
-map("n", "<M-Up>", ":resize +2<CR>", opt)
-map("n", "<M-Down>", ":resize -2<CR>", opt)
-map("n", "s,", ":vertical resize -20<CR>", opt)
+map("n", "<M-Up>", ":resize -2<CR>", opt)
+map("n", "<M-Down>", ":resize +2<CR>", opt)
+map("n", "s,", ":vertical res+ze -20<CR>", opt)
 map("n", "s.", ":vertical resize +20<CR>", opt)
 map("n", "sk", ":resize +20<CR>", opt)
 map("n", "sj", ":resize -20<CR>", opt)
-
+map("n", "s=", "<C-w>=", opt)
 -- 退出
 map("n", "wq", ":wq<CR>", opt)
 map("n", "q", ":q<CR>", opt)
@@ -78,6 +78,10 @@ map("t", "<esc>", [[<C-\><C-n>]], opt)
 map("t", "<C-h>", [[<Cmd>wincmd h<CR>]], opt)
 map("t", "<C-j>", [[<Cmd>wincmd j<CR>]], opt)
 map("t", "<C-k>", [[<Cmd>wincmd k<CR>]], opt)
+
+-- visual 模式下的快捷键
+map("v", "<", "<gv", opt)
+map("v", ">", ">gv", opt)
 
 -- Telescope 快捷键设置
 map("n", "<C-p>", ":Telescope find_files<CR>", opt)
