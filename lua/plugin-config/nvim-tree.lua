@@ -5,12 +5,16 @@ if not status then
 	return
 end
 
+-- 禁止 默认的 文件树
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- 列表操作快捷键
 local list_keys = require("keymappings").nvimTreeList
 -- 设置配置项
 nvim_tree.setup({
 	git = {
-		enable = false,
+		enable = true,
 	},
 	sort_by = "case_sensitive",
 	update_cwd = true,
@@ -26,7 +30,7 @@ nvim_tree.setup({
 		dotfiles = false,
 	},
 	view = {
-		width = 30,
+		width = 35,
 		side = "left",
 		adaptive_size = true,
 		signcolumn = "yes",
@@ -37,10 +41,12 @@ nvim_tree.setup({
 	},
 	system_open = {
 		cmd = "open",
+		-- cmd = "wsl-open" // npm i -g wsl-open
 	},
 	actions = {
 		open_file = {
 			quit_on_open = false,
+			resize_window = true,
 		},
 	},
 })

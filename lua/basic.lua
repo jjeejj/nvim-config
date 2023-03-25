@@ -24,6 +24,8 @@ vim.wo.signcolumn = "yes"
 
 -- 右侧行长度参考线
 vim.wo.colorcolumn = "120"
+--  开启真彩色
+vim.g.termguicolors = true
 
 -- tab 4 个空格
 vim.o.shiftwidth = 4

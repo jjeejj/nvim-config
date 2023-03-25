@@ -54,9 +54,9 @@ map("n", "<M-t>", ":NvimTreeToggle<CR>", opt)
 pluginKey.nvimTreeList = {
 	{ key = ".", action = "toggle_dotfiles" },
 	{ key = { "<CR>", "o", "<2-LeftMouse>" }, action = "edit" },
-	{ key = "sh", action = "split" },
-	{ key = "sv", action = "vsplit" },
-	{ key = "st", action = "tabnew" },
+	{ key = "h", action = "split" },
+	{ key = "v", action = "vsplit" },
+	{ key = "t", action = "tabnew" },
 	-- 文件操作
 	{ key = "<F5>", action = "refresh" },
 	{ key = "a", action = "create" },
