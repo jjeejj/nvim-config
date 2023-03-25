@@ -12,6 +12,7 @@ lualine.setup({
 	},
 	sections = {
 		lualine_c = {
+			"nvim_tree",
 			"filename",
 			{
 				"lsp_progress",
@@ -31,5 +32,10 @@ lualine.setup({
 			},
 			"filetype",
 		},
+	},
+	extensions = {
+		"nvm-tree",
+		"toggleterm",
+		"quickfix",
 	},
 })
