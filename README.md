@@ -88,3 +88,7 @@ nvim 的配置
 
 答：更新 sumneko_lua 为 [lua_ls](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#lua_ls)
 
+9. 插件去哪里查询?
+
+* [github awesome-neovim](https://github.com/rockerBOO/awesome-neovim)
+* [neovimcraft   插件网站](https://neovimcraft.com)

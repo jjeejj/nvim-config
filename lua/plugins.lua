@@ -97,3 +97,11 @@ packer.startup({
 		max_jobs = nil,
 	},
 })
+
+-- 当该文件变化时，自动进行编译
+vim.cmd([[
+    augroup packer_user_config
+        autocmd!
+        autocmd BufWritePost plugins.lua source <afile> | PackerSync
+    augroup end
+]])
