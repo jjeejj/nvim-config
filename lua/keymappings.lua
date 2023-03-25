@@ -121,7 +121,7 @@ end
 -- 左右切换 tab
 map("n", "<M-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<M-l>", ":BufferLineCycleNext<CR>", opt)
-map("n", "<C-w>", ":Bdelete!<CR>", opt)
+map("n", "<M-c>", ":Bdelete!<CR>", opt)
 map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
 map("n", "<leader>bh", ":BufferLineCloseLeft<CR>", opt)
 map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
