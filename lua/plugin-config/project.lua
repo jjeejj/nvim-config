@@ -4,9 +4,13 @@ if not status then
     return
 end
 
+-- nvim-tree 支持
+vim.g.nvim_tree_respect_buf_cwd = 1
+
 project.setup({
     manual_mode = false,
-    detection_methods = { "pattern" },
+    detection_methods = { "lsp", "pattern" },
     patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", "go.mod" },
+    datapath = vim.fn.stdpath("data"),
 })
 

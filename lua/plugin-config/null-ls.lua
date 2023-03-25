@@ -14,13 +14,13 @@ null_ls.setup({
 		formatting.gofmt,
 		formatting.goimposets,
 		formatting.prettier.with({
-			"javascript",
+			"javascript",	
 			"typescript",
 			"css",
 			"html",
 		}),
 		formatting.shfmt,
-		formatting.yamlfmt,
+		formatting.yamlfmt,	
 		formatting.black,
 		formatting.clang_format.with({
 			filetype = {
@@ -32,8 +32,8 @@ null_ls.setup({
 	},
 	-- 保存自动格式化
 	on_attach = function(client)
-		if client.server_capabilities.document_formatting then
-			vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
-		end
+		-- if client.server_capabilities.document_formatting then
+		--	vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+		-- end
 	end,
 })

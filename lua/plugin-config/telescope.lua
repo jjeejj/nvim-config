@@ -32,6 +32,6 @@ telescope.setup({
 -- telescope extensions
 pcall(telescope.load_extension, "ui-select")
 pcall(telescope.load_extension, "env")
-pcall(telescope.load_extension, "project")
+pcall(telescope.load_extension, "projects")
 pcall(telescope.load_extension, "fzf")
 pcall(telescope.load_extension, "media_files")

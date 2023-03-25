@@ -34,7 +34,7 @@ lualine.setup({
 		},
 	},
 	extensions = {
-		"nvm-tree",
+		"nvim-tree",
 		"toggleterm",
 		"quickfix",
 	},

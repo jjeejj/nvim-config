@@ -4,7 +4,7 @@ packer.startup({
 	function(use)
 		use("wbthomason/packer.nvim")
 		-- dashboard vim 启动页配置
-		use({ "glepnir/dashboard-nvim", event = "VimEnter", requires = { "nvim-tree/nvim-web-devicons"} })
+		use({ "glepnir/dashboard-nvim", requires = { "nvim-tree/nvim-web-devicons" } })	
 		-- lsp config
 		use("neovim/nvim-lspconfig")
 		-- lsp installer
@@ -51,7 +51,7 @@ packer.startup({
 		use("nvim-telescope/telescope-project.nvim")
 		-- telescope-media-files.nvim
 		-- https://github.com/nvim-telescope/telescope-media-files.nvim
-		use("nvim-telescope/telescope-media-files.nvim")
+		use({ "nvim-telescope/telescope-media-files.nvim", requires = { "nvim-lua/popup.nvim" } })
 		-- toggleterm.vim
 		-- https://github.com/akinsho/toggleterm.nvim
 		use({ "akinsho/toggleterm.nvim", tag = "v2.*" })
@@ -104,7 +104,7 @@ packer.startup({
 })
 
 -- 当该文件变化时，自动进行编译
-vim.cmd([[
+vim.cmd([[	
     augroup packer_user_config
         autocmd!
         autocmd BufWritePost plugins.lua source <afile> | PackerSync
