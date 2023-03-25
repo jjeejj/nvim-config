@@ -4,7 +4,7 @@ packer.startup({
 	function(use)
 		use("wbthomason/packer.nvim")
 		-- dashboard vim 启动页配置
-		use("glepnir/dashboard-nvim")
+		use({ "glepnir/dashboard-nvim", event = "VimEnter", requires = { "nvim-tree/nvim-web-devicons"} })
 		-- lsp config
 		use("neovim/nvim-lspconfig")
 		-- lsp installer
