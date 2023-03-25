@@ -74,7 +74,7 @@ packer.startup({
 		use("rafamadriz/friendly-snippets")
 		-- lualine.nvim
 		-- https://github.com/nvim-lualine/lualine.nvim
-		use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true, "moll/vim-bbye" } })
+		use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } })
 		use("arkav/lualine-lsp-progress")
 		-- json 增强
 		use("b0o/schemastore.nvim")
