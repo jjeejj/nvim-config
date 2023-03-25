@@ -40,13 +40,18 @@ packer.startup({
 		-- telescope.nvim
 		-- https://github.com/nvim-telescope/telescope.nvim
 		use({ "nvim-telescope/telescope.nvim", requires = "nvim-lua/plenary.nvim" })
-
+		-- fzf sort
+		-- https://github.com/nvim-telescope/telescope-fzf-native.nvim
+		use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 		-- telescope-env.nvim"
 		-- https://github.com/LinArcX/telescope-env.nvim
 		use("LinArcX/telescope-env.nvim")
 		-- telescope-project.nvim
 		-- https://github.com/nvim-telescope/telescope-project.nvim
 		use("nvim-telescope/telescope-project.nvim")
+		-- telescope-media-files.nvim
+		-- https://github.com/nvim-telescope/telescope-media-files.nvim
+		use("nvim-telescope/telescope-media-files.nvim")
 		-- toggleterm.vim
 		-- https://github.com/akinsho/toggleterm.nvim
 		use({ "akinsho/toggleterm.nvim", tag = "v2.*" })

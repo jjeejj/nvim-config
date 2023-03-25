@@ -90,6 +90,10 @@ map("n", "<C-;>", ":Telescope project<CR>", opt)
 pluginKey.telescopeList = {
 	i = {
 		["<Esc>"] = "close",
+		-- 预览窗口上下滚动
+		["<C-u>"] = "preview_scrolling_up",
+		["<C-d>"] = "preview_scrolling_down",
+		["<C-h>"] = "which_key",
 	},
 }
 
