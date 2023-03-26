@@ -19,7 +19,7 @@ packer.startup({
 		-- use("williamboman/mason.nvim")
 		-- colorscheme tokyonight
 		use("folke/tokyonight.nvim")
-		use("RRethy/nvim-base16")
+		-- use("RRethy/nvim-base16")
 		-- nord
 		use("shaunsingh/nord.nvim")
 		-- onedark
