@@ -19,6 +19,7 @@ require("plugin-config.bufferline")
 require("plugin-config.indent-blankline")
 require("plugin-config.null-ls")
 require("plugin-config.lsp-signature")
+require("plugin-config.mason")
 
 -- 主体设置
 
