@@ -5,7 +5,8 @@ if not status then
 end
 
 treesitter.setup({
-    ensure_installed = {"c", "lua", "rust", "go", "json", "yaml", "typescript", "java", "javascript", "html", "css", "vim"},
+    ensure_installed = {"c", "lua", "rust", "go", "json", "yaml", "typescript", "java", "javascript", "html", "css", "vim", "thrift", "proto", "gosum", "gomod"},
+    -- ensure_installed = "all"
     sync_install = false,
     auto_install = true,
     highlight = {
