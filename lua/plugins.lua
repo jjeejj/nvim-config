@@ -10,13 +10,13 @@ packer.startup({
 		-- lsp installer
 		use("williamboman/nvim-lsp-installer")
 		use({ "williamboman/mason.nvim", run = ":MasonUpdate" })
+		use("williamboman/mason-lspconfig.nvim")
 		-- kosayoda/nvim-lightbulb
 		-- https://github.com/kosayoda/nvim-lightbulb
 		use("kosayoda/nvim-lightbulb")
 		-- ray-x/lsp_signature.nvim
 		-- https://github.com/ray-x/lsp_signature.nvim
 		use("ray-x/lsp_signature.nvim")
-		-- use("williamboman/mason-lspconfig.nvim")
 		-- colorscheme tokyonight
 		use("folke/tokyonight.nvim")
 		-- use("RRethy/nvim-base16")

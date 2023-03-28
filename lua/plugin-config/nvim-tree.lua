@@ -13,6 +13,8 @@ vim.g.loaded_netrwPlugin = 1
 local list_keys = require("keymappings").nvimTreeList
 -- 设置配置项
 nvim_tree.setup({
+    disable_netrw = false,
+    hijack_netrw = true,
 	git = {
 		enable = true,
 	},

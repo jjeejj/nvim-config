@@ -12,7 +12,7 @@ null_ls.setup({
 		formatting.buf,
 		formatting.cmake_format,
 		formatting.gofmt,
-		formatting.goimposets,
+		-- formatting.goimposets,
 		formatting.prettier.with({
 			"javascript",	
 			"typescript",
@@ -30,10 +30,4 @@ null_ls.setup({
 		}),
 		formatting.jq,
 	},
-	-- 保存自动格式化
-	on_attach = function(client)
-		-- if client.server_capabilities.document_formatting then
-		--	vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
-		-- end
-	end,
 })
