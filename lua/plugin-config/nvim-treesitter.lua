@@ -5,7 +5,8 @@ if not status then
 end
 
 treesitter.setup({
-    ensure_installed = {"c", "lua", "rust", "go", "json", "yaml", "typescript", "java", "javascript", "html", "css", "vim", "thrift", "proto", "gosum", "gomod"},
+    ensure_installed = { "c", "lua", "rust", "go", "json", "yaml", "typescript", "java", "javascript", "html", "css",
+        "vim", "thrift", "proto", "gosum", "gomod", "markdown", "markdown_inline" },
     -- ensure_installed = "all"
     sync_install = false,
     auto_install = true,
@@ -32,4 +33,3 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 -- 默认不要折叠
 -- https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
 vim.opt.foldlevel = 99
-
