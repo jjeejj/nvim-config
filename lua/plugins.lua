@@ -63,20 +63,21 @@ packer.startup({
         -- snippet 引擎
         use("hrsh7th/vim-vsnip")
         -- 补全源
-        use("hrsh7th/cmp-nvim-lsp") -- name = nvim_lsp
-        use("hrsh7th/cmp-buffer") -- name = buffer
-        use("hrsh7th/cmp-path") -- name = path
-        use("hrsh7th/cmp-cmdline") -- name = cmdline
-        use("hrsh7th/cmp-vsnip") -- 代码片段提示
-        use("f3fora/cmp-spell") -- 单词拼写
+        use("hrsh7th/cmp-nvim-lsp")                -- name = nvim_lsp
+        use("hrsh7th/cmp-buffer")                  -- name = buffer
+        use("hrsh7th/cmp-path")                    -- name = path
+        use("hrsh7th/cmp-cmdline")                 -- name = cmdline
+        use("hrsh7th/cmp-vsnip")                   -- 代码片段提示
+        use("f3fora/cmp-spell")                    -- 单词拼写
+        use("hrsh7th/cmp-nvim-lsp-signature-help") -- 函数签名
+        -- 常见编程语言代码段
+        use("rafamadriz/friendly-snippets")
         use({
             "tzachar/cmp-tabnine",
             run = "./install.sh",
             requires = "hrsh7th/nvim-cmp",
             -- commit = "8c4512d148693ecb412ef9be4df9fb4619d033df",
         }) -- ai 代码补全
-        -- 常见编程语言代码段
-        use("rafamadriz/friendly-snippets")
         -- lualine.nvim
         -- https://github.com/nvim-lualine/lualine.nvim
         use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } })
