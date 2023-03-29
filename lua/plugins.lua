@@ -94,6 +94,12 @@ packer.startup({
 		-- null-ls.nvim
 		-- https://github.com/jose-elias-alvarez/null-ls.nvim
 		use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim" } })
+        -- git blame
+        -- https://github.com/f-person/git-blame.nvim
+        -- use("f-person/git-blame.nvim")
+        --  gitsigns.nvim
+        -- https://github.com/lewis6991/gitsigns.nvim
+        use("lewis6991/gitsigns.nvim")
 	end,
 	config = {
 		display = {

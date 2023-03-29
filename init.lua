@@ -20,7 +20,7 @@ require("plugin-config.indent-blankline")
 require("plugin-config.null-ls")
 require("plugin-config.lsp-signature")
 require("plugin-config.mason")
-
+require("plugin-config.git-signs")
 -- 主体设置
 
 -- LSP
