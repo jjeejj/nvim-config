@@ -144,43 +144,38 @@ pluginKey.cmp = function(cmp)
         return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
     end
     return {
-        ["<M-,>"] = cmp.mapping({
+        ["<D-,>"] = cmp.mapping({
             i = cmp.mapping.abort(),
             c = cmp.mapping.close(),
         }),
-        ["<M-.>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+        ["<D-.>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
         ["<Down>"] = cmp.mapping.select_prev_item(),
         ["<Up>"] = cmp.mapping.select_next_item(),
         -- 上一个 在一个
         ["<C-p>"] = cmp.mapping.select_prev_item(),
         ["<C-n>"] = cmp.mapping.select_next_item(),
         -- 确定
-        ["<CR>"] = cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
-        }),
+        ['<CR>'] = function(fallback)
+            if cmp.visible() then
+                cmp.confirm({
+                    select = true,
+                    behavior = cmp.ConfirmBehavior.Replace
+                })
+            else
+                fallback() -- If you use vim-endwise, this fallback will behave the same as vim-endwise.
+            end
+        end,
         -- 如果窗口内容太多，可以滚动
         ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
         ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
-        -- Super Tab
-        -- ["<Tab>"] = cmp.mapping(function(fallback)
-        --    if cmp.visible() then
-        --        cmp.select_next_item()
-        --    elseif vim.fn["vsnip#available"](1) == 1 then
-        --        feedkey("<Plug>(vsnip-expand-or-jump)", "")
-        --    elseif has_words_before() then
-        --        cmp.complete()
-        --    else
-        --        fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
-        --   end
-        -- end, { "i", "s" }),
-        -- ["<S-Tab>"] = cmp.mapping(function()
-        --    if cmp.visible() then
-        --        cmp.select_prev_item()
-        --    elseif vim.fn["vsnip#jumpable"](-1) == 1 then
-        --        feedkey("<Plug>(vsnip-jump-prev)", "")
-        --    end
-        -- end, { "i", "s" }),
+        -- tab 选择下一个
+        ["<Tab>"] = function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            else
+                fallback()
+            end
+        end
     }
 end
 
