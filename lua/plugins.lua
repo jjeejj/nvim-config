@@ -93,6 +93,7 @@ packer.startup({
         -- https://github.com/glepnir/lspsaga.nvim
         use({
             "glepnir/lspsaga.nvim",
+            opt = true,
             branch = "main",
             event = "LspAttach",
             requires = {

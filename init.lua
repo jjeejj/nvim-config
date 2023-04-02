@@ -17,10 +17,11 @@ require("plugin-config.nvim-treesitter")
 require("plugin-config.lualine")
 require("plugin-config.bufferline")
 require("plugin-config.indent-blankline")
-require("plugin-config.null-ls")
+-- require("plugin-config.null-ls")
 require("plugin-config.lsp-signature")
 require("plugin-config.mason")
 require("plugin-config.git-signs")
+require("plugin-config.lspsaga")
 -- 主体设置
 
 -- LSP

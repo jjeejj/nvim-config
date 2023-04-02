@@ -5,5 +5,8 @@ if not status then
 end
 
 lspsaga.setup({
-
+    diagaostic = {
+        on_insert = true,
+        on_insert_follow = true,
+    },
 })
