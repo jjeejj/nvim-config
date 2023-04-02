@@ -1,4 +1,4 @@
-local status , mason_lspconfig = pcall(require, "mason-lspconfig")
+local status, mason_lspconfig = pcall(require, "mason-lspconfig")
 if not status then
     vim.notify("not found mason lspconfig")
     return
@@ -19,9 +19,9 @@ mason_lspconfig.setup({
 -- 加载对应的 lsp 的配置
 mason_lspconfig.setup_handlers({
     function(server_name)
-        lspconfig[server_name].setup()
+        -- lspconfig[server_name].setup()
     end,
-    ["lua_ls"] = function ()
+    ["lua_ls"] = function()
         require("lsp.config.lua").on_setup(lspconfig["lua_ls"])
     end,
 })
