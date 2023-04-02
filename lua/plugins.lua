@@ -93,12 +93,12 @@ packer.startup({
         -- https://github.com/glepnir/lspsaga.nvim
         use({
             "glepnir/lspsaga.nvim",
-            opt = true,
+            -- opt = true,
             branch = "main",
             event = "LspAttach",
             requires = {
                 { "nvim-tree/nvim-web-devicons" },
-                --Please make sure you install markdown and markdown_inline parser
+                --        --Please make sure you install markdown and markdown_inline parser
                 { "nvim-treesitter/nvim-treesitter" }
             }
         })

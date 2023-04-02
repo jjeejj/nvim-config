@@ -1,3 +1,4 @@
+vim.cmd [[packadd lspsaga.nvim]]
 local status, lspsaga = pcall(require, "lspsaga")
 if not status then
     vim.notify("not found lspsaga")

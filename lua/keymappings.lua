@@ -105,7 +105,7 @@ pluginKey.lspList = function(bufnr)
     -- go to
     -- bufmap(bufnr, "n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opt)
     bufmap(bufnr, "n", "gd", "<cmd>Lspsaga goto_definition<CR>", opt)
-    bufmap(bufnr, "n", "gd", "<cmd>Lspsaga peek_definition<CR>", opt)
+    -- bufmap(bufnr, "n", "gd", "<cmd>Lspsaga peek_definition<CR>", opt)
     bufmap(bufnr, "n", "gt", "<cmd>Lspsaga goto_type_definition<CR>", opt)
     bufmap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
     -- bufmap(bufnr, "n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
@@ -121,7 +121,8 @@ pluginKey.lspList = function(bufnr)
     -- bufmap(bufnr, "n", "gp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opt)
     bufmap(bufnr, "n", "gp", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opt)
     bufmap(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
-    bufmap(bufnr, "n", "<M-d>", "<cmd>Lspsage yerm_toggle<CR>", opt)
+    bufmap(bufnr, "n", [[<M-\>]], "<cmd>Lspsaga term_toggle<CR>", opt)
+    bufmap(bufnr, "t", [[<M-\>]], "<cmd>Lspsaga term_toggle<CR>", opt)
 end
 
 -- bufferline
