@@ -120,7 +120,7 @@ pluginKey.lspList = function(bufnr)
     bufmap(bufnr, "n", "gn", "<cmd>Lspsaga diagnostic_jump_next<CR>", opt)
     -- bufmap(bufnr, "n", "gp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opt)
     bufmap(bufnr, "n", "gp", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opt)
-    bufmap(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
+    bufmap(bufnr, "n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opt)
     bufmap(bufnr, "n", [[<M-\>]], "<cmd>Lspsaga term_toggle<CR>", opt)
     bufmap(bufnr, "t", [[<M-\>]], "<cmd>Lspsaga term_toggle<CR>", opt)
 end
@@ -140,14 +140,6 @@ map("n", "Z", ":foldopen<CR>", opt)
 
 -- cmp 代码补全
 pluginKey.cmp = function(cmp)
-    local feedkey = function(key, mode)
-        vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
-    end
-
-    local has_words_before = function()
-        local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-        return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-    end
     return {
         ["<D-,>"] = cmp.mapping({
             i = cmp.mapping.abort(),

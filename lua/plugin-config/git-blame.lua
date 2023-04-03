@@ -5,4 +5,4 @@ if not status then
     return
 end
 
-gitblam.setup()
+gitblame.setup()
