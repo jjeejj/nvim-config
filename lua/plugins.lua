@@ -111,6 +111,9 @@ packer.startup({
         --  gitsigns.nvim
         -- https://github.com/lewis6991/gitsigns.nvim
         use("lewis6991/gitsigns.nvim")
+        -- rust language lsp
+        use("simrat39/rust-tools.nvim")
+        use("mfussenegger/nvim-dap")
     end,
     config = {
         display = {

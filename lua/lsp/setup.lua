@@ -13,7 +13,8 @@ end
 -- 自动安装 指定的 lsp server
 mason_lspconfig.setup({
     ensure_installed = {
-        "lua_ls"
+        "lua_ls",
+        "rust_analyzer",
     },
 })
 -- 加载对应的 lsp 的配置
@@ -23,5 +24,8 @@ mason_lspconfig.setup_handlers({
     end,
     ["lua_ls"] = function()
         require("lsp.config.lua").on_setup(lspconfig["lua_ls"])
+    end,
+    ["rust_analyzer"] = function()
+        require("lsp.config.rust").on_setup(lspconfig["rust_analyzer"])
     end,
 })
