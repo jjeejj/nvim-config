@@ -16,7 +16,7 @@ mason_lspconfig.setup({
         "lua_ls",
         "html",
         "cssls",
-        "emmet-ls",
+        "emmet_ls",
     },
 })
 -- 加载对应的 lsp 的配置
@@ -33,7 +33,7 @@ mason_lspconfig.setup_handlers({
     ["cssls"] = function()
         require("lsp.config.css").on_setup(lspconfig["cssls"])
     end,
-    ["emmet-ls"] = function()
-        require("lsp.config.emmet-ls").on_setup(lspconfig["emmet-ls"])
+    ["emmet_ls"] = function()
+        require("lsp.config.emmet_ls").on_setup(lspconfig["emmet_ls"])
     end
 })
