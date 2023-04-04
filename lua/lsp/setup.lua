@@ -17,6 +17,7 @@ mason_lspconfig.setup({
         "html",
         "cssls",
         "emmet_ls",
+        "jsonls",
     },
 })
 -- 加载对应的 lsp 的配置
@@ -35,5 +36,8 @@ mason_lspconfig.setup_handlers({
     end,
     ["emmet_ls"] = function()
         require("lsp.config.emmet_ls").on_setup(lspconfig["emmet_ls"])
+    end,
+    ["jsonls"] = function()
+        require("lsp.config.json").on_setup(lspconfig["jsonls"])
     end
 })

@@ -111,6 +111,9 @@ packer.startup({
         --  gitsigns.nvim
         -- https://github.com/lewis6991/gitsigns.nvim
         use("lewis6991/gitsigns.nvim")
+        -- schemastore.nvim
+        -- https://github.com/b0o/schemastore.nvim
+        use("b0o/schemastore.nvim")
     end,
     config = {
         display = {
