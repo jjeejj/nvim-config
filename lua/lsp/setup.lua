@@ -13,7 +13,10 @@ end
 -- 自动安装 指定的 lsp server
 mason_lspconfig.setup({
     ensure_installed = {
-        "lua_ls"
+        "lua_ls",
+        "html",
+        "cssls",
+        "emmet-ls",
     },
 })
 -- 加载对应的 lsp 的配置
@@ -24,4 +27,13 @@ mason_lspconfig.setup_handlers({
     ["lua_ls"] = function()
         require("lsp.config.lua").on_setup(lspconfig["lua_ls"])
     end,
+    ["html"] = function()
+        require("lsp.config.html").on_setup(lspconfig["html"])
+    end,
+    ["cssls"] = function()
+        require("lsp.config.css").on_setup(lspconfig["cssls"])
+    end,
+    ["emmet-ls"] = function()
+        require("lsp.config.emmet-ls").on_setup(lspconfig["emmet-ls"])
+    end
 })
