@@ -6,7 +6,7 @@ end
 
 treesitter.setup({
     ensure_installed = { "c", "lua", "rust", "go", "json", "yaml", "typescript", "java", "javascript", "html", "css",
-        "vim", "thrift", "proto", "gosum", "gomod", "markdown", "markdown_inline" },
+        "vim", "thrift", "proto", "gosum", "gomod", "markdown", "markdown_inline" , "scss", "vue" },
     -- ensure_installed = "all"
     sync_install = false,
     auto_install = true,

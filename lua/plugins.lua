@@ -114,6 +114,9 @@ packer.startup({
         -- rust language lsp
         use("simrat39/rust-tools.nvim")
         use("mfussenegger/nvim-dap")
+        -- schemastore.nvim
+        -- https://github.com/b0o/schemastore.nvim
+        use("b0o/schemastore.nvim")
     end,
     config = {
         display = {
