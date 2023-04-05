@@ -121,6 +121,9 @@ packer.startup({
         -- comment.vim
         -- https://github.com/numToStr/Comment.nvim
         use("numToStr/Comment.nvim")
+        -- autopairs
+        -- https://github.com/windwp/nvim-autopairs
+        use("windwp/nvim-autopairs")
     end,
     config = {
         display = {

@@ -23,6 +23,7 @@ require("plugin-config.mason")
 require("plugin-config.git-signs")
 require("plugin-config.lspsaga")
 require("plugin-config.comment")
+require("plugin-config.autopairs")
 -- 主体设置
 
 -- LSP
