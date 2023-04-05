@@ -17,7 +17,7 @@ local opt = {
 return {
     on_setup = function(server)
         rt.setup({
-            server = vim.tbl_deep_extend("force", server.default_config, opt),
+            server = vim.tbl_deep_extend("force", require("lspconfig").util.default_config, opt),
         })
     end,
 }

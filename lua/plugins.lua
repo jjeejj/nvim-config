@@ -82,8 +82,6 @@ packer.startup({
         -- https://github.com/nvim-lualine/lualine.nvim
         use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } })
         use("arkav/lualine-lsp-progress")
-        -- json 增强
-        use("b0o/schemastore.nvim")
         -- ui 图标
         use("onsails/lspkind-nvim")
         -- indent-blankline.nvim
@@ -113,10 +111,12 @@ packer.startup({
         use("lewis6991/gitsigns.nvim")
         -- rust language lsp
         use("simrat39/rust-tools.nvim")
-        use("mfussenegger/nvim-dap")
-        -- schemastore.nvim
+        -- schemastore.nvim json 增强
         -- https://github.com/b0o/schemastore.nvim
         use("b0o/schemastore.nvim")
+        -- dap 调试
+        use("mfussenegger/nvim-dap")
+
     end,
     config = {
         display = {
