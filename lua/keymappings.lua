@@ -110,7 +110,7 @@ pluginKey.lspList = function(bufnr)
     bufmap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
     -- bufmap(bufnr, "n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
     bufmap(bufnr, "n", "gh", "<cmd>Lspsaga hover_doc<CR>", opt)
-    bufmap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementtation()<CR>", opt)
+    bufmap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
     -- bufmap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opt)
     bufmap(bufnr, "n", "gr", "<cmd>Lspsaga lsp_finder<CR>", opt)
     -- diagnostic
