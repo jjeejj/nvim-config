@@ -63,12 +63,12 @@ packer.startup({
         -- snippet 引擎
         use("hrsh7th/vim-vsnip")
         -- 补全源
-        use("hrsh7th/cmp-nvim-lsp")                -- name = nvim_lsp
-        use("hrsh7th/cmp-buffer")                  -- name = buffer
-        use("hrsh7th/cmp-path")                    -- name = path
-        use("hrsh7th/cmp-cmdline")                 -- name = cmdline
-        use("hrsh7th/cmp-vsnip")                   -- 代码片段提示
-        use("f3fora/cmp-spell")                    -- 单词拼写
+        use("hrsh7th/cmp-nvim-lsp")          -- name = nvim_lsp
+        use("hrsh7th/cmp-buffer")            -- name = buffer
+        use("hrsh7th/cmp-path")              -- name = path
+        use("hrsh7th/cmp-cmdline")           -- name = cmdline
+        use("hrsh7th/cmp-vsnip")             -- 代码片段提示
+        use("f3fora/cmp-spell")              -- 单词拼写
         use("hrsh7th/cmp-nvim-lsp-signature-help") -- 函数签名
         -- 常见编程语言代码段
         use("rafamadriz/friendly-snippets")
@@ -97,8 +97,8 @@ packer.startup({
             requires = {
                 { "nvim-tree/nvim-web-devicons" },
                 --        --Please make sure you install markdown and markdown_inline parser
-                { "nvim-treesitter/nvim-treesitter" }
-            }
+                { "nvim-treesitter/nvim-treesitter" },
+            },
         })
         -- null-ls.nvim
         -- https://github.com/jose-elias-alvarez/null-ls.nvim
@@ -116,7 +116,11 @@ packer.startup({
         use("b0o/schemastore.nvim")
         -- dap 调试
         use("mfussenegger/nvim-dap")
-
+        use("theHamsta/nvim-dap-virtual-text")
+        use("rcarriga/nvim-dap-ui")
+        -- comment.vim
+        -- https://github.com/numToStr/Comment.nvim
+        use("numToStr/Comment.nvim")
     end,
     config = {
         display = {

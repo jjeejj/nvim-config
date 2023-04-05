@@ -152,16 +152,23 @@ pluginKey.cmp = function(cmp)
         ["<C-p>"] = cmp.mapping.select_prev_item(),
         ["<C-n>"] = cmp.mapping.select_next_item(),
         -- 确定
-        ['<CR>'] = function(fallback)
-            if cmp.visible() then
-                cmp.confirm({
-                    select = true,
-                    behavior = cmp.ConfirmBehavior.Replace
-                })
-            else
-                fallback() -- If you use vim-endwise, this fallback will behave the same as vim-endwise.
-            end
-        end,
+        ["<CR>"] = cmp.mapping({
+            i = function(fallback)
+                if cmp.visible() and cmp.get_active_entry() then
+                    cmp.confirm({
+                        select = true,
+                        behavior = cmp.ConfirmBehavior.Replace,
+                    })
+                else
+                    fallback() -- If you use vim-endwise, this fallback will behave the same as vim-endwise.
+                end
+            end,
+            s = cmp.mapping.confirm({ select = true }),
+            c = cmp.mapping.confirm({
+                select = true,
+                behavior = cmp.ConfirmBehavior.Replace,
+            }),
+        }),
         -- 如果窗口内容太多，可以滚动
         ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
         ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
@@ -172,7 +179,7 @@ pluginKey.cmp = function(cmp)
             else
                 fallback()
             end
-        end
+        end,
     }
 end
 
