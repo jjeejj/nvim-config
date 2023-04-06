@@ -5,7 +5,7 @@ vim.o.fileencoding = "utf-8"
 -- 展示行号
 vim.o.number = true
 vim.wo.number = true
-vim.wo.relativenumber = true
+vim.wo.relativenumber = false
 
 vim.o.scrolloff = 8
 vim.o.sidescrolloff = 8
@@ -70,3 +70,6 @@ vim.o.completeopt = "menu,menuone,noselect,noinsert"
 
 -- 连续按键超时时间
 vim.o.timeoutlen = 500
+
+-- clipboard
+vim.o.clipboard ="unnamedplus"
