@@ -124,6 +124,14 @@ packer.startup({
         -- autopairs
         -- https://github.com/windwp/nvim-autopairs
         use("windwp/nvim-autopairs")
+        -- markdown-preview.nvim
+        -- https://github.com/iamcco/markdown-preview.nvim
+        use({
+            "iamcco/markdown-preview.nvim",
+            run = function()
+                vim.fn["mkdp#util#install"]()
+            end,
+        })
     end,
     config = {
         display = {
