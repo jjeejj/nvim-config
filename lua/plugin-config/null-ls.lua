@@ -37,6 +37,7 @@ null_ls.setup({
         }),
         formatting.jq,
         formatting.rustfmt,
+        formatting.dart_format,
     },
     on_attach = function(client)
         -- vim.cmd([[ autocmd BufWritePre <buffer> lua vim.lsp.buf.format({ async = false}) ]])

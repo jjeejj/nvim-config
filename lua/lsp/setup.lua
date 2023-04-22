@@ -1,3 +1,4 @@
+
 local status, mason_lspconfig = pcall(require, "mason-lspconfig")
 if not status then
     vim.notify("not found mason lspconfig")
@@ -52,4 +53,8 @@ mason_lspconfig.setup_handlers({
     ["yamlls"] = function()
         require("lsp.config.yaml").on_setup(lspconfig["yamlls"])
     end,
-})
+});
+
+-- mason not suooport lsp
+-- use lspconfig
+require("lsp.config.dart").on_setup(lspconfig["dartls"])
