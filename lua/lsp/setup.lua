@@ -22,6 +22,7 @@ mason_lspconfig.setup({
         "jsonls",
         "gopls",
         "yamlls",
+        "tsserver"
     },
 })
 -- 加载对应的 lsp 的配置
@@ -52,6 +53,9 @@ mason_lspconfig.setup_handlers({
     end,
     ["yamlls"] = function()
         require("lsp.config.yaml").on_setup(lspconfig["yamlls"])
+    end,
+    ["tsserver"] = function()
+        require("lsp.config.ts").on_setup(lspconfig["tsserver"])
     end,
 });
 
