@@ -1,4 +1,3 @@
-
 local status, mason_lspconfig = pcall(require, "mason-lspconfig")
 if not status then
     vim.notify("not found mason lspconfig")
@@ -22,7 +21,8 @@ mason_lspconfig.setup({
         "jsonls",
         "gopls",
         "yamlls",
-        "tsserver"
+        "tsserver",
+        "bashls",
     },
 })
 -- 加载对应的 lsp 的配置
@@ -57,7 +57,10 @@ mason_lspconfig.setup_handlers({
     ["tsserver"] = function()
         require("lsp.config.ts").on_setup(lspconfig["tsserver"])
     end,
-});
+    ["bashls"] = function()
+        require("lsp.config.sh").on_setup(lspconfig["bashls"])
+    end,
+})
 
 -- mason not suooport lsp
 -- use lspconfig
