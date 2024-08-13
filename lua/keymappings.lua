@@ -50,22 +50,22 @@ map("n", "<C-e>", "<ESC>A", opt)
 
 -- tree 文件树左侧快捷键设置
 map("n", "<M-t>", ":NvimTreeToggle<CR>", opt)
-pluginKey.nvimTreeList = {
-    { key = ".",                              action = "toggle_dotfiles" },
-    { key = { "<CR>", "o", "<2-LeftMouse>" }, action = "edit" },
-    { key = "h",                              action = "split" },
-    { key = "v",                              action = "vsplit" },
-    { key = "t",                              action = "tabnew" },
-    -- 文件操作
-    { key = "<F5>",                           action = "refresh" },
-    { key = "a",                              action = "create" },
-    { key = "d",                              action = "remove" },
-    { key = "r",                              action = "rename" },
-    { key = "x",                              action = "cut" },
-    { key = "c",                              action = "copy" },
-    { key = "p",                              action = "paste" },
-    { key = "<leader>",                       action = "system_open" },
-}
+-- pluginKey.nvimTreeList = {
+--     { key = ".",                              action = "toggle_dotfiles" },
+--     { key = { "<CR>", "o", "<2-LeftMouse>" }, action = "edit" },
+--     { key = "h",                              action = "split" },
+--     { key = "v",                              action = "vsplit" },
+--     { key = "t",                              action = "tabnew" },
+--     -- 文件操作
+--     { key = "<F5>",                           action = "refresh" },
+--     { key = "a",                              action = "create" },
+--     { key = "d",                              action = "remove" },
+--     { key = "r",                              action = "rename" },
+--     { key = "x",                              action = "cut" },
+--     { key = "c",                              action = "copy" },
+--     { key = "p",                              action = "paste" },
+--     { key = "<leader>",                       action = "system_open" },
+-- }
 
 -- terminal 终端快捷键设置
 map("t", "li", ":LspInstallInfo<CR>", opt)

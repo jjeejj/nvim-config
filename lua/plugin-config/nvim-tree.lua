@@ -38,11 +38,21 @@ nvim_tree.setup({
         side = "left",
         adaptive_size = true,
         signcolumn = "yes",
-        mappings = {
-            custom_only = false,
-            list = list_keys,
-        },
+        -- mappings = {
+        --     custom_only = false,
+        --     list = list_keys,
+        -- },
     },
+    on_attach = function(bufnr)
+        local function opts(desc)
+            return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+        end
+        local api = require "nvim-tree.api"
+        api.config.mappings.default_on_attach(bufnr)
+        -- custom mappings
+        vim.keymap.set('n', '<C-t>', api.tree.change_root_to_parent, opts('Up'))
+        vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
+    end,
     system_open = {
         cmd = "open",
         -- cmd = "wsl-open" // npm i -g wsl-open
