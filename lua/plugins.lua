@@ -133,6 +133,13 @@ packer.startup({
                 vim.fn["mkdp#util#install"]()
             end,
         })
+        use({
+            'akinsho/flutter-tools.nvim',
+            requires = {
+                'nvim-lua/plenary.nvim',
+                'stevearc/dressing.nvim', -- optional for vim.ui.select
+            },
+        })
     end,
     config = {
         display = {
