@@ -94,7 +94,7 @@ packer.startup({
             -- opt = true,
             branch = "main",
             after = "nvim-lspconfig",
-            event = "LspAttach",
+            event = "BufReadPost",
             requires = {
                 { "nvim-tree/nvim-web-devicons" },
                 --        --Please make sure you install markdown and markdown_inline parser
