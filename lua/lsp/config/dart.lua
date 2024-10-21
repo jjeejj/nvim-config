@@ -2,6 +2,7 @@ return {
     on_setup = function(server)
         server.setup({
             cmd = { "dart", "language-server", "--protocol=lsp" },
+            -- cmd = { "fvm dart", "language-server", "--protocol=lsp" }, -- fvm manange flutter 
             filetypes = { "dart" },
             init_options = {
                 closingLabels = true,

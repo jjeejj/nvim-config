@@ -62,16 +62,16 @@ packer.startup({
         use("hrsh7th/nvim-cmp")
         -- snippet 引擎
         use("hrsh7th/vim-vsnip")
+        use("hrsh7th/cmp-vsnip") -- 代码片段提示
+        -- 常见编程语言代码段
+        use("rafamadriz/friendly-snippets")
         -- 补全源
         use("hrsh7th/cmp-nvim-lsp")          -- name = nvim_lsp
         use("hrsh7th/cmp-buffer")            -- name = buffer
         use("hrsh7th/cmp-path")              -- name = path
         use("hrsh7th/cmp-cmdline")           -- name = cmdline
-        use("hrsh7th/cmp-vsnip")             -- 代码片段提示
         use("f3fora/cmp-spell")              -- 单词拼写
         use("hrsh7th/cmp-nvim-lsp-signature-help") -- 函数签名
-        -- 常见编程语言代码段
-        use("rafamadriz/friendly-snippets")
         use({
             "tzachar/cmp-tabnine",
             run = "./install.sh",
@@ -94,7 +94,7 @@ packer.startup({
             -- opt = true,
             branch = "main",
             after = "nvim-lspconfig",
-            event = "BufReadPost",
+            -- event = "LspAttach",
             requires = {
                 { "nvim-tree/nvim-web-devicons" },
                 --        --Please make sure you install markdown and markdown_inline parser

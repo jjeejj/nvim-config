@@ -138,6 +138,12 @@ map("n", "<leader>bc", ":BufferLinePickClose<CR>", opt)
 map("n", "zz", ":foldclose<CR>", opt)
 map("n", "Z", ":foldopen<CR>", opt)
 
+local has_words_before = function()
+    unpack = unpack or table.unpack
+    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
+  
 -- cmp 代码补全
 pluginKey.cmp = function(cmp)
     return {
@@ -173,13 +179,25 @@ pluginKey.cmp = function(cmp)
         ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
         ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
         -- tab 选择下一个
-        ["<Tab>"] = function(fallback)
+        ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
+              if #cmp.get_entries() == 1 then
+                cmp.confirm({ select = true })
+              else
                 cmp.select_next_item()
+              end
+            --[[ Replace with your snippet engine (see above sections on this page)
+            elseif snippy.can_expand_or_advance() then
+              snippy.expand_or_advance() ]]
+            elseif has_words_before() then
+              cmp.complete()
+              if #cmp.get_entries() == 1 then
+                cmp.confirm({ select = true })
+              end
             else
-                fallback()
+              fallback()
             end
-        end,
+          end, { "i", "s" })
     }
 end
 

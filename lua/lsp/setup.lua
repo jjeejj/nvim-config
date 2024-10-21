@@ -13,6 +13,7 @@ end
 -- 自动安装 指定的 lsp server
 mason_lspconfig.setup({
     ensure_installed = {
+        "ast_grep",
         "lua_ls",
         "rust_analyzer",
         "html",
@@ -21,15 +22,15 @@ mason_lspconfig.setup({
         "jsonls",
         "gopls",
         "yamlls",
-        "tsserver",
+        "ts_ls",
         "bashls",
     },
 })
 -- 加载对应的 lsp 的配置
 mason_lspconfig.setup_handlers({
-    function(server_name)
-        -- lspconfig[server_name].setup()
-    end,
+    -- function(server_name)
+    --     -- lspconfig[server_name].setup()
+    -- end,
     ["lua_ls"] = function()
         require("lsp.config.lua").on_setup(lspconfig["lua_ls"])
     end,
@@ -54,14 +55,17 @@ mason_lspconfig.setup_handlers({
     ["yamlls"] = function()
         require("lsp.config.yaml").on_setup(lspconfig["yamlls"])
     end,
-    ["tsserver"] = function()
-        require("lsp.config.ts").on_setup(lspconfig["tsserver"])
+    ["ts_ls"] = function()
+        require("lsp.config.ts").on_setup(lspconfig["ts_ls"])
     end,
     ["bashls"] = function()
         require("lsp.config.sh").on_setup(lspconfig["bashls"])
+    end,
+    ["ast_grep"] = function()
+        require("lsp.config.ast_grep").on_setup(lspconfig["ast_grep"])
     end,
 })
 
 -- mason not suooport lsp
 -- use lspconfig
-require("lsp.config.dart").on_setup(lspconfig["dartls"])
+-- require("lsp.config.dart").on_setup(lspconfig["dartls"])
